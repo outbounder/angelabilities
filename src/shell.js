@@ -1,5 +1,5 @@
 var exec = require("shellreactions-exec").exec
-var ssh = require("shellreactions-exec").ssh
+var ssh = require("shellreactions-exec").ssh_exec
 
 module.exports = function(angel){
   angel.exec = function(commands, next){
