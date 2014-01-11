@@ -5,14 +5,17 @@
   "scripts": {
     "test": "jasmine-node ./tests/"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/outbounder/angelabilities.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/outbounder/angelabilities.git"
   },
   "dependencies": {
     "underscore": "1.5.2",
     "reactions": "0.0.8",
-    "shellreactions-exec": "0.0.3"
+    "shellreactions-exec": "0.0.4",
+    "ncp": "~0.5.0",
+    "temporary": "0.0.8",
+    "string-template": "~0.1.3"
   },
   "devDependencies": {
     "jasmine-node": "1.11.0",

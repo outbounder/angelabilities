@@ -6,6 +6,12 @@ A collection of angel abilities.
 
 When used `angel.output` and `angel.input` will be references to `process.stdout` and `process.stdin`
 
+### angel.log(string, ...)
+
+Does a fancy console.log using angel.cmdData embeded
+
+* `string`: pattern with `{placeholder}` support using `angel.cmdData` as source
+
 ## shell
 
 Helper methods wrapper of `shellreactions-exec`. 
@@ -85,6 +91,39 @@ Helper methods wrapper of `reactions`.
       // result[0] == "test", result[1] == "test2"
     })
 
+### angel.series.wrap(fn, args... )
+
+* `fn` : any function having callback as last argument
+* `args` : arguments to be passed to `fn`
+
+<br />
+
+
+  angel.series([
+    angel.series.wrap(fs.exists, angel.cmdData.value),
+    ...
+  ])
+
+## Filesystem
+
+### angel.fs.cp(src, dest, ignoreList)
+
+Returns reaction `function(angel, next)` wrapped arguments and impl.
+
+* `src` : String, name of the `cmdData` property to be used for source
+* `dest` : String, name of the `cmdaData` property to be used for destination
+* `ignoreList` : [ String, matched agains every file ]
+
+### angel.fs.chdir(path)
+
+Returns reaction `function(angel, next)` wrapped arguments and impl.
+
+* `path`: String, name of the `cmdData` property to be used for current directory path
+
+### angel.fs.tempfolder()
+
+Returns `temporary` folder path.
+
 # Thanks to
 
 ## reactions
@@ -101,3 +140,9 @@ https://github.com/outbounder/organic-angel
 
 ## jasmine-node
 https://github.com/mhevery/jasmine-node
+
+## ncp
+https://github.com/AvianFlu/ncp
+
+## temporary
+http://github.com/vesln/temporary

@@ -3,8 +3,9 @@ var ssh = require("shellreactions-exec").ssh_exec
 
 module.exports = function(angel){
   angel.exec = function(commands, next){
-    if(next) 
+    if(next) {
       return exec(commands, this, next)
+    }
     return exec(commands)
   }
   angel.ssh = function(remote, commands, next){
