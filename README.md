@@ -124,6 +124,12 @@ Returns reaction `function(angel, next)` wrapped arguments and impl.
 
 Returns `temporary` folder path.
 
+## Format
+
+### angel.format(value)
+
+Returns `String` where any `{placeholder}` are replaced using angel.cmdData as source
+
 # Thanks to
 
 ## reactions
